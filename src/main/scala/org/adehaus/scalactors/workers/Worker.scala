@@ -8,6 +8,8 @@ class Worker extends Actor {
       react {
         case Work(x) =>
           sender ! Done(x)
+        case Done(_) =>
+          exit
       }
     }
   }
